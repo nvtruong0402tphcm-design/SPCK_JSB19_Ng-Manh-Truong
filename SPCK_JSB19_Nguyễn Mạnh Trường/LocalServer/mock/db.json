@@ -1,0 +1,78 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop Dell",
+      "price": 15000000,
+      "category": "Laptop",
+      "stock": 10
+    },
+    {
+      "id": "2",
+      "name": "iPhone 16",
+      "price": 22000000,
+      "category": "Phone",
+      "stock": 5
+    },
+    {
+      "id": "3",
+      "name": "Samsung Galaxy",
+      "price": 18000000,
+      "category": "Phone",
+      "stock": 8
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Nguyen Van A",
+      "email": "a@gmail.com"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "userId": "1",
+      "productId": "1",
+      "quantity": 2
+    }
+  ],
+  "news": [
+    {
+      "id": "1",
+      "title": "Nguồn gốc ca khúc hoàn toàn mới giành vị trí Top 1 của Bảng đấu Hắc mã",
+      "summary": "Ca khúc nhanh chóng vươn lên vị trí dẫn đầu nhờ giai điệu bắt tai, màn trình diễn ấn tượng và nhận được nhiều phản hồi tích cực từ khán giả.",
+      "image": "https://cdn-images.vtv.vn/zoom/260_163/66349b6076cb4dee98746cf1/2026/07/26/nha-soan-nhac-2-83221617706847450710009-85202774672335981610059.jpg",
+      "timeAgo": "15 phút trước"
+    },
+    {
+      "id": "2",
+      "title": "Gặp gỡ nam sinh giành 2 huy chương Olympic Toán quốc tế",
+      "summary": "Bên cạnh Huy chương Bạc kỳ IMO 2026, Trần Đại Thành Danh - học sinh Trường Phổ thông Năng khiếu - còn xuất sắc mang về Huy chương vàng tại APMO 2026.",
+      "image": "https://cdn-images.vtv.vn/zoom/260_163/66349b6076cb4dee98746cf1/2026/07/25/thanh-danh-9-22755975027911396245608-97408395223016889611218.jpg",
+      "timeAgo": "30 phút trước"
+    },
+    {
+      "id": "3",
+      "title": "Mã số vùng trồng: Từ 'giấy thông hành' đến nền tảng nông nghiệp bền vững",
+      "summary": "Mã số vùng trồng (MSVT) và mã số cơ sở đóng gói (MSCSĐG) không còn đơn thuần là những thủ tục hành chính bổ trợ mà đã trở thành \"tấm giấy thông hành\" thiết yếu.",
+      "image": "https://cdn-images.vtv.vn/zoom/260_163/66349b6076cb4dee98746cf1/2026/07/25/ma-so-vung-trong-2-17848514663341485920331-96943760517072540800218-95266455752750108010905.jpg",
+      "timeAgo": "45 phút trước"
+    },
+    {
+      "id": "4",
+      "title": "TikTok đối mặt cáo buộc mới từ EU",
+      "summary": "EU cho rằng TikTok chưa bảo đảm an toàn cho tài khoản của trẻ em theo Đạo luật dịch vụ kỹ thuật số, đánh dấu cáo buộc thứ tư nhằm vào nền tảng này trong hai năm.",
+      "image": "https://cdn-images.vtv.vn/zoom/260_163/66349b6076cb4dee98746cf1/2026/07/25/tiktok-62538638490790037208912-19793857008281715327705.jpg",
+      "timeAgo": "61 phút trước"
+    },
+    {
+      "title": "à ",
+      "summary": "à ",
+      "author": "sfa ",
+      "timeAgo": "Vừa xong",
+      "id": "-MvDJUNOhEg"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

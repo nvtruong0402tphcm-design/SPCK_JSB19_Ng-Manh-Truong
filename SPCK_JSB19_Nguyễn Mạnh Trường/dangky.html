@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="https://kit.fontawesome.com/b47a1c1ea4.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body class="container">
+
+    <nav class="navbar navbar-expand-lg bg-white sticky-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold text-danger fs-4" href="./trangchu.html">
+                <i class="fa-solid fa-newspaper me-1"></i>NEWS
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./trangchu.html">TRANG CHỦ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">MỚI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./detail5.html">GỬI TIN TỨC</a>
+                    </li>
+                </ul>
+                <form class="d-flex me-3" role="search">
+                    <input class="form-control rounded-pill me-2" type="search" placeholder="Tìm kiếm..." aria-label="Search">
+                    <button class="btn btn-outline-danger rounded-pill" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+                <div class="d-flex gap-2" id="authArea">
+                    <a class="btn btn-outline-danger rounded-pill px-3" href="./dangnhap.html">ĐĂNG NHẬP</a>
+                    <a class="btn btn-danger rounded-pill px-3" href="./dangky.html">ĐĂNG KÝ</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <hr>
+
+    <div class="container d-flex justify-content-center py-4">
+
+        <div class="card shadow form-box">
+
+            <h2 class="text-center text-danger mb-4">
+                ĐĂNG KÝ TÀI KHOẢN
+            </h2>
+
+            <form id="registerForm">
+
+                <div class="mb-3">
+                    <label class="form-label">Họ và tên</label>
+                    <input type="text" id="fullname" class="form-control"
+                        placeholder="Nhập họ và tên" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" id="email" class="form-control"
+                        placeholder="Nhập email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Tên đăng nhập</label>
+                    <input type="text" id="username" class="form-control"
+                        placeholder="Nhập tên đăng nhập" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Mật khẩu</label>
+                    <input type="password" id="password" class="form-control"
+                        placeholder="Nhập mật khẩu" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Xác nhận mật khẩu</label>
+                    <input type="password" id="confirmPassword" class="form-control"
+                        placeholder="Nhập lại mật khẩu" required>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="agree">
+                    <label class="form-check-label" for="agree">
+                        Tôi đồng ý với điều khoản sử dụng
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-danger w-100">
+                    Đăng ký
+                </button>
+
+                <p class="text-center mt-3 mb-0">
+                    Đã có tài khoản?
+                    <a href="./dangnhap.html" class="text-danger fw-bold">
+                        Đăng nhập
+                    </a>
+                </p>
+
+                <p class="text-center mt-2">
+                    <a href="./trangchu.html">Quay về trang chủ</a>
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var fullname = document.getElementById("fullname").value;
+            var email = document.getElementById("email").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var agree = document.getElementById("agree").checked;
+
+            if (fullname == "" || email == "" || username == "" || password == "" || confirmPassword == "") {
+                alert("Vui lòng nhập đầy đủ thông tin!");
+            }
+            else if (password != confirmPassword) {
+                alert("Mật khẩu xác nhận không đúng!");
+            }
+            else if (agree == false) {
+                alert("Vui lòng đồng ý với điều khoản!");
+            }
+            else {
+                localStorage.setItem("fullname", fullname);
+                localStorage.setItem("email", email);
+                localStorage.setItem("username", username);
+                localStorage.setItem("password", password);
+
+                alert("Đăng ký thành công!");
+
+                window.location.href = "./dangnhap.html";
+            }
+        });
+    </script>
+
+    <script src="./js/search.js"></script>
+    <script src="./js/auth.js"></script>
+
+</body>
+</html>

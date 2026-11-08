@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="https://kit.fontawesome.com/b47a1c1ea4.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="container">
+
+    <nav class="navbar navbar-expand-lg bg-white sticky-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold text-danger fs-4" href="./trangchu.html">
+                <i class="fa-solid fa-newspaper me-1"></i>NEWS
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./trangchu.html">TRANG CHỦ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">MỚI</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./detail5.html">GỬI TIN TỨC</a>
+                    </li>
+                </ul>
+            </div>
+            <form class="d-flex me-3" role="search">
+                <input class="form-control rounded-pill me-2" type="search" placeholder="Tìm kiếm..." aria-label="Search">
+                <button class="btn btn-outline-danger rounded-pill" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+
+            <div class="d-flex gap-2" id="authArea">
+                <a class="btn btn-outline-danger rounded-pill px-3" href="./dangnhap.html">ĐĂNG NHẬP</a>
+                <a class="btn btn-danger rounded-pill px-3" href="./dangky.html">ĐĂNG KÝ</a>
+            </div>
+            <div>
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+
+    </nav>
+
+    <div class="container mt-4 mb-5">
+
+        <div class="news-form">
+
+            <h3 class="text-danger fw-bold text-center mb-4">
+                GỬI TIN TỨC
+            </h3>
+
+            <form id="newsForm">
+
+                <div class="mb-3">
+                    <label class="form-label">Họ và tên</label>
+                    <input type="text" id="newsAuthor" class="form-control" placeholder="Nhập họ và tên" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" id="newsEmail" class="form-control" placeholder="Nhập email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Tiêu đề tin tức</label>
+                    <input type="text" id="newsTitle" class="form-control" placeholder="Nhập tiêu đề" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Nội dung</label>
+                    <textarea class="form-control" id="newsContent" rows="6" placeholder="Nhập nội dung tin tức..." required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Tệp đính kèm</label>
+                    <input type="file" class="form-control" multiple>
+                </div>
+
+                <button type="submit" class="btn btn-danger w-100">
+                    Gửi tin tức
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById("newsForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const form = this;
+
+            // Gom dữ liệu từ form thành object tin mới
+            const tinMoi = {
+                title: document.getElementById("newsTitle").value,
+                summary: document.getElementById("newsContent").value,
+                author: document.getElementById("newsAuthor").value,
+                timeAgo: "Vừa xong"
+            };
+
+            // POST /news: đẩy tin lên server
+            fetch("http://localhost:3001/news", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(tinMoi)
+            })
+                .then(function (res) {
+                    if (!res.ok) throw new Error("HTTP " + res.status);
+                    alert("Gửi tin tức thành công! Tin của bạn đã được lưu lên server và sẽ hiện ở trang chủ.");
+                    form.reset();
+                })
+                .catch(function () {
+                    alert("Không gửi được! Hãy bật server API: mở terminal trong thư mục LocalServer và chạy npm run mock.");
+                });
+        });
+    </script>
+
+    <script src="./js/search.js"></script>
+    <script src="./js/auth.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --news-red: #dc3545;
+    --news-bg: #f2f4f7;
+    --news-text: #212529;
+}
+
+body {
+    background-color: var(--news-bg);
+    font-family: 'Be Vietnam Pro', Arial, Helvetica, sans-serif;
+    color: var(--news-text);
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+a:hover {
+    color: var(--news-red);
+}
+
+hr {
+    opacity: .12;
+}
+
+/* THANH MENU */
+
+.navbar {
+    border-bottom: 3px solid var(--news-red);
+}
+
+.navbar .navbar-brand {
+    letter-spacing: .5px;
+}
+
+.navbar .nav-link {
+    font-weight: 600;
+    font-size: .95rem;
+    letter-spacing: .3px;
+    padding-left: .9rem;
+    padding-right: .9rem;
+}
+
+.navbar .nav-link:hover {
+    color: var(--news-red);
+}
+
+/* TRANG CHỦ */
+
+h2 a {
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.card {
+    border-radius: .75rem;
+    overflow: hidden;
+}
+
+.card-hover {
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+}
+
+.card-hover .card-img-top {
+    transition: transform .4s ease;
+}
+
+.card-hover:hover .card-img-top {
+    transform: scale(1.06);
+}
+
+.card-title a {
+    font-weight: 700;
+    font-size: 1.05rem;
+    line-height: 1.45;
+}
+
+.section-title {
+    font-weight: 800;
+    border-left: 5px solid var(--news-red);
+    padding-left: 12px;
+}
+
+.time-badge {
+    display: inline-block;
+    background: #e9ecef;
+    border-radius: 50rem;
+    padding: 4px 12px;
+}
+
+.news-thumb {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* TRANG BÀI VIẾT */
+
+.page-article h2 {
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.page-article h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #495057;
+    border-left: 4px solid var(--news-red);
+    padding-left: 12px;
+    line-height: 1.7;
+}
+
+.page-article h4 {
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.page-article h5 {
+    font-weight: 700;
+    margin-top: 2rem;
+}
+
+.page-article h6 {
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.9;
+    color: #222;
+}
+
+.page-article img {
+    display: block;
+    margin: 0 auto;
+    border-radius: .75rem;
+}
+
+.page-article textarea {
+    border-radius: .5rem;
+}
+
+#div {
+    font-size: large;
+    text-align: justify;
+}
+
+.img {
+    display: block;
+    margin: auto;
+}
+
+.p1 {
+    text-align: center;
+    color: gray;
+    font-size: .9rem;
+    font-style: italic;
+    margin-top: .5rem;
+}
+
+.article-content {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #222;
+    text-align: justify;
+}
+
+.article-content p {
+    margin-bottom: 1.1rem;
+}
+
+/* BÌNH LUẬN */
+
+.comment-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: .75rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+}
+
+/* FORM ĐĂNG NHẬP, ĐĂNG KÝ, GỬI TIN */
+
+.form-box {
+    width: 100%;
+    max-width: 450px;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 30px;
+    border: 0;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .08);
+}
+
+.form-box h2 {
+    font-weight: 800;
+}
+
+.form-box .form-control {
+    padding: 11px;
+    border-radius: .5rem;
+}
+
+.form-box .btn {
+    padding: 11px;
+    font-weight: 700;
+    border-radius: .5rem;
+}
+
+.news-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 1rem;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .08);
+}
+
+.news-form .form-control {
+    border-radius: .5rem;
+}
+
+/* CHÂN TRANG */
+
+.bg-dark {
+    margin-top: 2.5rem;
+    padding: 1.25rem 0;
+    border-radius: .75rem;
+}
+
+.bg-dark p {
+    margin-bottom: 0;
+}
